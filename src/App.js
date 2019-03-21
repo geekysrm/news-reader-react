@@ -5,10 +5,11 @@ import store from "./store";
 
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
-import NewsList from "./components/newslist/NewsList";
+import NewsSources from "./components/news-sources/NewsSources";
+import News from "./components/news/News";
 
 import "./App.css";
-console.log(process.env.REACT_APP_NEWS_API_KEY);
+
 class App extends Component {
   render() {
     return (
@@ -16,7 +17,8 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={NewsList} />
+            <Route exact path="/" component={NewsSources} />
+            <Route exact path="/news" component={News} />
 
             <Footer />
           </div>

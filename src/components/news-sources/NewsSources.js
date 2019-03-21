@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Select from "react-select";
 
-import "./NewsList.css";
+import "./NewsSources.css";
 import { setNewsSource } from "../../actions/newsActions";
 
 const colourOptions = [
-  { value: "abc-news", label: "ABC News", color: "#00B8D9", isFixed: true },
-  { value: "abc-news-au", label: "ABC News AU", color: "#0052CC", disabled: true },
-  { value: "ansa", label: "ANSA.it", color: "#5243AA" },
-  { value: "ary-news", label: "ARY News", color: "#5243AA" }
+  { value: "abc-news", label: "ABC News" },
+  {
+    value: "abc-news-au",
+    label: "ABC News AU"
+  },
+  { value: "ansa", label: "ANSA.it" },
+  { value: "ary-news", label: "ARY News" }
 ];
 
-class NewsList extends Component {
+class NewsSources extends Component {
   state = {
     newsSource: []
   };
@@ -53,4 +56,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { setNewsSource }
-)(NewsList);
+)(NewsSources);
