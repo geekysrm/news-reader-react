@@ -1,3 +1,25 @@
 .newslist-wrapper {
   padding-bottom: 78px;
 }
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 20px;
+  border: none;
+}
+
+.card:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.image-wrapper {
+  padding: 22px;
+}

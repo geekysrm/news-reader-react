@@ -18,22 +18,26 @@ class NewsSources extends Component {
         {this.props.news.news &&
           this.props.news.news.map(news => (
             <div className="card">
-              <div className="card-header">Featured</div>
+              <div className="card-header">Associated Press</div>
               <div className="card-body">
                 <div>
-                  <h5 className="card-title">Special title treatment</h5>
-                  <p className="card-text">
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </p>
-                  <a href="https://google.com" className="btn btn-primary">
-                    Go somewhere
+                  <h5 className="card-title">{news.title}</h5>
+                  <p className="card-text">{news.description}</p>
+                  <a
+                    href={news.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    Read >
                   </a>
                 </div>
-                <div>
+                <div className="image-wrapper">
                   <img
-                    src="https://www.aljazeera.com/mritems/Images/2019/3/5/5485ae2b43484c08aad4df2c8d003aa2_18.jpg"
+                    src={news.urlToImage}
                     alt=""
+                    width="200px"
+                    height="100px"
                   />
                 </div>
               </div>
