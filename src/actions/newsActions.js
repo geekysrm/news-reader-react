@@ -16,8 +16,7 @@ export const getNewsSources = () => dispatch => {
       const allSources = res.data.sources.map(source => {
         return {
           value: source.id,
-          label: source.name,
-          key: source.id
+          label: source.name
         };
       });
       dispatch({

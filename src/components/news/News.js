@@ -10,7 +10,6 @@ class NewsSources extends Component {
   };
   componentDidMount() {
     this.props.getNews(this.props.news.newsSource);
-    // console.log(this.props);
   }
 
   render() {
@@ -19,7 +18,12 @@ class NewsSources extends Component {
         {this.props.news.news &&
           this.props.news.news.map(news => (
             <>
-              <a key={news.url} href={news.url} target="_blank">
+              <a
+                key={news.url}
+                href={news.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {news.title}
               </a>
               <br />

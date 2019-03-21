@@ -11,16 +11,17 @@ class NewsSources extends Component {
     newsSource: []
   };
   async componentDidMount() {
-    if (localStorage.newsSource) {
-      await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
-      this.props.history.push("/news");
-    }
+    // if (localStorage.newsSource) {
+    //   await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
+    //   this.props.history.push("/news");
+    // }
 
     this.props.getNewsSources();
   }
 
   onClick = () => {
     this.props.setNewsSource(this.state.newsSource);
+    this.props.history.push("/news");
   };
   onChange = selectedOptions => {
     if (selectedOptions) {
