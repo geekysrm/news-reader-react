@@ -32,7 +32,7 @@ class NewsSources extends Component {
   render() {
     if (this.props.news.allSources)
       return (
-        <div>
+        <div className="container select-wrapper">
           <Select
             defaultValue={[]}
             onChange={this.onChange}
@@ -41,8 +41,15 @@ class NewsSources extends Component {
             options={this.props.news.allSources}
             className="basic-multi-select"
             classNamePrefix="select"
+            placeholder="Select one or more news sources"
           />
-          <button onClick={this.onClick}>Submit</button>
+
+          <button
+            className="mt-3 btn btn-info btn-md btn-block"
+            onClick={this.onClick}
+          >
+            Submit
+          </button>
         </div>
       );
     else return <div>Loading...</div>;

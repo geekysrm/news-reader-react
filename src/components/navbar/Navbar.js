@@ -22,7 +22,7 @@ export default function Navbar() {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/news">
-                See News
+                Read News
               </Link>
             </li>
             <li className="nav-item">
