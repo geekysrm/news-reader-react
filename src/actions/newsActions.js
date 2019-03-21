@@ -1,9 +1,31 @@
 import NewsAPI from "newsapi";
+import axios from "axios";
 
-import { SET_NEWS_SOURCE } from "./types";
-import { GET_NEWS } from "./types";
+import { SET_NEWS_SOURCE, GET_NEWS, GET_NEWS_SOURCES } from "../actions/types";
 
 const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY);
+
+export const getNewsSources = () => dispatch => {
+  axios
+    .get(
+      `https://newsapi.org/v2/sources?apiKey=${
+        process.env.REACT_APP_NEWS_API_KEY
+      }`
+    )
+    .then(res => {
+      const allSources = res.data.sources.map(source => {
+        return {
+          value: source.id,
+          label: source.name
+        };
+      });
+      dispatch({
+        type: GET_NEWS_SOURCES,
+        payload: allSources
+      });
+    })
+    .catch(err => console.log(err));
+};
 
 export const setNewsSource = newsSource => dispatch => {
   localStorage.setItem("newsSource", newsSource);
