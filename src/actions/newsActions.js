@@ -8,7 +8,7 @@ const newsapi = new NewsAPI(process.env.REACT_APP_NEWS_API_KEY);
 export const getNewsSources = () => dispatch => {
   axios
     .get(
-      `https://newsapi.org/v2/sources?apiKey=${
+      `https://newsapi.org/v2/sources?language=en&apiKey=${
         process.env.REACT_APP_NEWS_API_KEY
       }`
     )
@@ -16,7 +16,8 @@ export const getNewsSources = () => dispatch => {
       const allSources = res.data.sources.map(source => {
         return {
           value: source.id,
-          label: source.name
+          label: source.name,
+          key: source.id
         };
       });
       dispatch({
@@ -28,7 +29,7 @@ export const getNewsSources = () => dispatch => {
 };
 
 export const setNewsSource = newsSource => dispatch => {
-  localStorage.setItem("newsSource", newsSource);
+  localStorage.setItem("newsSource", JSON.stringify(newsSource));
   console.log(newsSource);
   dispatch({
     type: SET_NEWS_SOURCE,

@@ -10,7 +10,12 @@ class NewsSources extends Component {
   state = {
     newsSource: []
   };
-  componentDidMount() {
+  async componentDidMount() {
+    if (localStorage.newsSource) {
+      await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
+      this.props.history.push("/news");
+    }
+
     this.props.getNewsSources();
   }
 
