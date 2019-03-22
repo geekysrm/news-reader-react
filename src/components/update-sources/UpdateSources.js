@@ -12,10 +12,7 @@ class UpdateSources extends Component {
   };
   async componentDidMount() {
     if (localStorage.newsSource) {
-      // await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
-      // this.props.history.push("/news");
-      // await this.props.getNewsSources();
-      // await this.props.getUserNewsSources();
+      await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
     }
 
     this.props.getNewsSources();
@@ -32,11 +29,11 @@ class UpdateSources extends Component {
   };
 
   render() {
-    if (this.props.news.allSources && this.props.news.userNewsSources)
+    if (this.props.news.allSources && this.props.news.newsSource)
       return (
         <div className="container select-wrapper">
           <Select
-            defaultValue={this.props.news.userNewsSources}
+            defaultValue={this.props.news.newsSource}
             onChange={this.onChange}
             isMulti
             name="newsSource"
