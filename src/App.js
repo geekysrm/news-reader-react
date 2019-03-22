@@ -6,6 +6,7 @@ import store from "./store";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import NewsSources from "./components/news-sources/NewsSources";
+import UpdateSources from "./components/update-sources/UpdateSources";
 import News from "./components/news/News";
 
 import "./App.css";
@@ -19,6 +20,7 @@ class App extends Component {
             <Navbar />
             <Route exact path="/" component={NewsSources} />
             <Route exact path="/news" component={News} />
+            <Route exact path="/update-sources" component={UpdateSources} />
 
             <Footer />
           </div>

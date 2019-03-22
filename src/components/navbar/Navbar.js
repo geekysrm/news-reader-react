@@ -26,13 +26,8 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/all-posts">
-                All Posts
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/profile">
-                Profile
+              <Link className="nav-link" to="/update-sources">
+                Update Sources
               </Link>
             </li>
           </ul>
