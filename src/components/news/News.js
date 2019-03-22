@@ -45,7 +45,7 @@ class NewsSources extends Component {
                     rel="noopener noreferrer"
                     className="btn btn-primary"
                   >
-                    Read >
+                    Read
                   </a>
                 </div>
                 <div className="image-wrapper">
@@ -53,8 +53,18 @@ class NewsSources extends Component {
                     src={news.urlToImage}
                     alt=""
                     width="200px"
-                    height="100px"
+                    height="120px"
                   />
+                  <span className="share-icon">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`mailto:?subject=${news.title}&body=${news.url}`}
+                      title="Share via Email"
+                    >
+                      <i className="far fa-envelope" />
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>

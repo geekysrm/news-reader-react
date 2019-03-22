@@ -42,6 +42,7 @@ class NewsSources extends Component {
             className="basic-multi-select"
             classNamePrefix="select"
             placeholder="Select one or more news sources"
+
           />
 
           <button
