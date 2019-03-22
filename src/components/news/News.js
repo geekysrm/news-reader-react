@@ -3,19 +3,20 @@ import { connect } from "react-redux";
 
 import "./News.css";
 import { getNews } from "../../actions/newsActions";
+import { setNewsSource } from "../../actions/newsActions";
 
 class NewsSources extends Component {
-  state = {
-    // newsSource: []
-  };
-  componentDidMount() {
+  async componentDidMount() {
+    if (localStorage.newsSource) {
+      await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
+    }
     this.props.getNews(this.props.news.newsSource);
   }
 
   render() {
     return (
       <div className="newslist-wrapper">
-        {this.props.news.news &&
+        {this.props.news.news ? (
           this.props.news.news.map(news => (
             <div className="card">
               <div className="card-header">
@@ -45,7 +46,7 @@ class NewsSources extends Component {
                     rel="noopener noreferrer"
                     className="btn btn-primary"
                   >
-                    Read
+                    Read full article
                   </a>
                 </div>
                 <div className="image-wrapper">
@@ -68,7 +69,10 @@ class NewsSources extends Component {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     );
   }
@@ -80,5 +84,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getNews }
+  { getNews, setNewsSource }
 )(NewsSources);

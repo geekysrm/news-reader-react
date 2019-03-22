@@ -11,10 +11,10 @@ class NewsSources extends Component {
     newsSource: []
   };
   async componentDidMount() {
-    // if (localStorage.newsSource) {
-    //   await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
-    //   this.props.history.push("/news");
-    // }
+    if (localStorage.newsSource) {
+      await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
+      this.props.history.push("/news");
+    }
 
     this.props.getNewsSources();
   }
@@ -42,7 +42,6 @@ class NewsSources extends Component {
             className="basic-multi-select"
             classNamePrefix="select"
             placeholder="Select one or more news sources"
-
           />
 
           <button
