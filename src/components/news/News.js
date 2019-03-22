@@ -9,8 +9,11 @@ class NewsSources extends Component {
   async componentDidMount() {
     if (localStorage.newsSource) {
       await this.props.setNewsSource(JSON.parse(localStorage.newsSource));
+      this.props.getNews(this.props.news.newsSource);
     }
-    this.props.getNews(this.props.news.newsSource);
+    else {
+      this.props.history.push("/");
+    }
   }
 
   render() {
