@@ -49,3 +49,21 @@ a:hover {
   padding-right: 8px;
   font-size: 18px;
 }
+
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+  .card-title {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
