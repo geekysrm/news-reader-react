@@ -66,4 +66,14 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .card-body {
+    flex-direction: column-reverse;
+  }
+  .image-wrapper {
+    padding: 0px;
+  }
+  .share-icon {
+    justify-content: end;
+    margin: 10px 0px;
+  }
 }
