@@ -23,3 +23,15 @@
 .image-wrapper {
   padding: 22px;
 }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+.news-article-source {
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: none;
+}
