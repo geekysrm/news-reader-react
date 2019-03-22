@@ -60,6 +60,24 @@ class NewsSources extends Component {
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
+                      href={`https://twitter.com/share?url=${news.url}`}
+                      title="Share via Twiiter"
+                    >
+                      <i className="fab fa-twitter" />
+                    </a>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${
+                        news.url
+                      }`}
+                      title="Share via Facebook"
+                    >
+                      <i className="fab fa-facebook-f" />
+                    </a>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={`mailto:?subject=${news.title}&body=${news.url}`}
                       title="Share via Email"
                     >

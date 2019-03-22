@@ -46,4 +46,6 @@ a:hover {
 }
 .share-icon a {
   color: darkgray;
+  padding-right: 8px;
+  font-size: 18px;
 }
